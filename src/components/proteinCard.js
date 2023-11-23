@@ -2,7 +2,6 @@ import { Heading, Image, Card, Stack,  CardHeader, CardBody, CardFooter } from '
 import { Text } from '@chakra-ui/react';
 import Product from '../components/product';
 
-//export default function ProteinCard({productName, companyName, imgUrl}){
 export default function ProteinCard({product}){
 	const alt = `${product.name}_image`;
 	return (
