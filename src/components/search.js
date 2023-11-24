@@ -1,7 +1,7 @@
 import { Stack, Checkbox } from '@chakra-ui/react';
 import { useState } from 'react';
-import ProteinsDisplay from '../components/proteinsDisplay';
 
+import ProteinTag from '../components/proteinTag';
 
 export default function SearchCtrl ({tags, setTags}){
 	const [checkedWhey, setCheckedWhey] = useState(false);
@@ -13,9 +13,9 @@ export default function SearchCtrl ({tags, setTags}){
 		
 		let newTag = tags.slice()
 		if(isChecked){
-			newTag.push('ホエイ');
+			newTag.push(ProteinTag.Whey);
 		}else{
-			newTag = newTag.filter(tag => tag !== 'ホエイ');
+			newTag = newTag.filter(tag => tag !== ProteinTag.Whey);
 		}
 
 		setTags(newTag);
@@ -27,9 +27,9 @@ export default function SearchCtrl ({tags, setTags}){
 		
 		let newTag = tags.slice()
 		if(isChecked){
-			newTag.push('ソイ');
+			newTag.push(ProteinTag.Soy);
 		}else{
-			newTag = newTag.filter(tag => tag !== 'ソイ');
+			newTag = newTag.filter(tag => tag !== ProteinTag.Soy);
 		}
 
 		setTags(newTag);
@@ -37,8 +37,8 @@ export default function SearchCtrl ({tags, setTags}){
 
 	return (
 		<Stack direction='row'>
-			<Checkbox isChecked={checkedWhey} onChange={WheyCheckboxOnChange}>ホエイ</Checkbox>
-			<Checkbox isChecked={checkedSoy} onChange={SoyCheckboxOnChange}>ソイ</Checkbox>
+			<Checkbox isChecked={checkedWhey} onChange={WheyCheckboxOnChange}>{ProteinTag.Whey}</Checkbox>
+			<Checkbox isChecked={checkedSoy} onChange={SoyCheckboxOnChange}>{ProteinTag.Soy}</Checkbox>
 		</Stack>
 	);
 
