@@ -1,7 +1,7 @@
 import ProteinCard from '../components/proteinCard';
 import Product from '../components/product';
 import ProteinTag from '../components/proteinTag';
-import { Stack, Text } from '@chakra-ui/react';
+import { Text, SimpleGrid } from '@chakra-ui/react';
 
 const p1 = new Product(
 	'ホエイダイエットプロテイン(1000g)',
@@ -40,9 +40,9 @@ export default function ProteinsDisplay({tags}){
 	return (
 		<div>
 		<Text>{num}個のプロテインが見つかりました</Text>
-		<Stack direction='row'>
+		<SimpleGrid columns={3} spacing={3}>
 		{ filtered.map(protein => <ProteinCard product={protein} />) }
-		</Stack>
+		</SimpleGrid>
 		</div>
 	);
 }
