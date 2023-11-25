@@ -11,7 +11,10 @@ export default function ProteinCard({product}){
 		return (
 			<Popover>
 				<PopoverTrigger>
-					<Button size='md'>リンク</Button>
+					<Button size='md' variant='link' whiteSpace='unset' colorScheme='black' justifyContent='flex-start'>
+					<Text overflowWrap='break-word'>{product.name}</Text>
+					</Button>
+					
 				</PopoverTrigger>
 				<PopoverContent>
 					<PopoverArrow />
@@ -41,9 +44,8 @@ export default function ProteinCard({product}){
 				<Image src={product.imgUrl} alt={alt} objectFit='cover' />
 	
 				<Stack mt='6' spacing='3'>
-					<Heading size='md'>{product.name}</Heading>
-					<Link href={product.company.url}>{product.company.name}</Link>
 					{popover(product)}
+					<Link href={product.company.url}>{product.company.name}</Link>
 				</Stack>
 	
 			</CardBody>
