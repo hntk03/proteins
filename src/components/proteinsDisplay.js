@@ -21,6 +21,21 @@ const p1 = new Product(
 		new Taste(
 			'ほうじ茶',
 			new Url('https://amzn.asia/d/6ZTUKG8')),
+		new Taste(
+			'ココナッツチヨコレート',
+			new Url('https://amzn.asia/d/fjmtLyk')),
+		new Taste(
+			'チョコレート',
+			new Url('https://amzn.asia/d/31Sx6jz')),
+		new Taste(
+			'フルーツオレ',
+			new Url('https://amzn.asia/d/0Cqkzzv')),
+		new Taste(
+			'抹茶ラテ',
+			new Url('https://amzn.asia/d/cexRDDf')),
+		new Taste(
+			'紫芋',
+			new Url('https://amzn.asia/d/0aRdKmN')),
 	]
 );
 
@@ -39,6 +54,12 @@ const p2 = new Product(
 		new Taste(
 			'ミルクティー',
 			new Url('https://amzn.asia/d/cOt7pjX')),
+		new Taste(
+			'モンブラン',
+			new Url('https://amzn.asia/d/3YcVOK0')),
+		new Taste(
+			'杏仁',
+			new Url('https://amzn.asia/d/0CYoTHx')),
 	]
 );
 
@@ -51,6 +72,42 @@ const p3 = new Product(
 		new Taste(
 			'激うまチョコ風味',
 			new Url('https://amzn.asia/d/fV6K6ca')),
+		new Taste(
+			'ベリベリベリー風味',
+			new Url('https://amzn.asia/d/5IiBLpd')),
+		new Taste(
+			'そんなバナナ風味',
+			new Url('https://amzn.asia/d/exMUEJe')),
+		new Taste(
+			'情熱のパッションフルーツ風味',
+			new Url('https://amzn.asia/d/85Z5Wn5')),
+		new Taste(
+			'GO GO マンゴー風味',
+			new Url('https://amzn.asia/d/8Tdxe2j')),
+		new Taste(
+			'初恋のいちご風味',
+			new Url('https://amzn.asia/d/hquFZJK')),
+		new Taste(
+			'めろめろメロン風味',
+			new Url('https://amzn.asia/d/35oyn4c')),
+		new Taste(
+			'よう振るとヨーグルト風味',
+			new Url('https://amzn.asia/d/h171f6T')),
+		new Taste(
+			'ナチュラル',
+			new Url('https://amzn.asia/d/1AO3Rs1')),
+		new Taste(
+			'キャラメル珈琲風味',
+			new Url('https://amzn.asia/d/01pHIbb')),
+		new Taste(
+			'抹茶のチャチャチャ風味',
+			new Url('https://amzn.asia/d/3eR9uUO')),
+		new Taste(
+			'背中に鬼レモン風味',
+			new Url('https://amzn.asia/d/hCn2emr')),
+		new Taste(
+			'ぴちぴちハッピーチ風味',
+			new Url('https://amzn.asia/d/bkUvgcB')),
 	]
 );
 

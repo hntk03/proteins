@@ -1,5 +1,5 @@
 import { Heading, Image, Card, Stack,  CardHeader, CardBody, CardFooter } from '@chakra-ui/react';
-import { Button, Popover, PopoverTrigger, PopoverContent, PopoverArrow, PopoverCloseButton, PopoverBody } from '@chakra-ui/react';
+import { Button, Popover, PopoverTrigger, PopoverHeader, PopoverContent, PopoverArrow, PopoverCloseButton, PopoverBody } from '@chakra-ui/react';
 import { Tab, Tabs, TabList, TabPanels, TabPanel, Divider } from '@chakra-ui/react';
 import { Text, Link } from '@chakra-ui/react';
 import Product from '../components/product';
@@ -9,15 +9,15 @@ export default function ProteinCard({product}){
 	const popover = (product) => {
 
 		return (
-			<Popover>
+			<Popover minW='max-content'>
 				<PopoverTrigger>
 					<Button size='md'>リンク</Button>
 				</PopoverTrigger>
 				<PopoverContent>
 					<PopoverArrow />
-					<PopoverCloseButton />
+					<PopoverHeader>Amazon</PopoverHeader>
 					<PopoverBody>
-					{Tastes(product)}
+					{product.tastes.map(taste => <Button as='a' variant='outline' href={taste.url.amazon}>{taste.name}</Button>)}
 					</PopoverBody>
 					</PopoverContent>
 			</Popover>
@@ -26,18 +26,8 @@ export default function ProteinCard({product}){
 
 	const Tastes = (product) => {
 		return (
-			<Tabs variant='soft-rounded' size='sm'>
-				<TabList>
-				{product.tastes.map(taste => <Tab>{taste.name}</Tab>)}
-				</TabList>
-			<Divider />
-			<TabPanels>
-				{product.tastes.map(taste => 
-				<TabPanel>
-					<Button as='a' variant='outline' href={taste.url.amazon}>Amazon</Button>
-				</TabPanel>)}
-			</TabPanels>
-			</Tabs>
+			<div>
+			</div>
 		);
 	}
 
