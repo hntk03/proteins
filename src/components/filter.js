@@ -1,9 +1,9 @@
-import { Stack, Checkbox } from '@chakra-ui/react';
+import { Stack, Checkbox, Heading, Box } from '@chakra-ui/react';
 import { useState } from 'react';
 
 import ProteinTag from '../components/proteinTag';
 
-export default function SearchCtrl ({tags, setTags}){
+export default function FilterCtrl ({tags, setTags}){
 	const [checkedWhey, setCheckedWhey] = useState(false);
 	const [checkedSoy, setCheckedSoy] = useState(false);
 
@@ -36,10 +36,13 @@ export default function SearchCtrl ({tags, setTags}){
 	}
 
 	return (
+		<Box my='5'>
+		<Heading size='md'>フィルター</Heading>
 		<Stack direction='row'>
 			<Checkbox isChecked={checkedWhey} onChange={WheyCheckboxOnChange}>{ProteinTag.Whey}</Checkbox>
 			<Checkbox isChecked={checkedSoy} onChange={SoyCheckboxOnChange}>{ProteinTag.Soy}</Checkbox>
 		</Stack>
+		</Box>
 	);
 
 }

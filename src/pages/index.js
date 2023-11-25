@@ -7,7 +7,7 @@ import MyHead from '../components/myhead';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import ProteinsDisplay from '../components/proteinsDisplay';
-import SearchCtrl from '../components/search';
+import FilterCtrl from '../components/filter';
 
 export default function Home() {
 	const [tags, setTags] = useState([]);
@@ -20,7 +20,7 @@ export default function Home() {
 
       <main>
 			<Header />
-			<SearchCtrl tags={tags} setTags={setTags} />
+			<FilterCtrl tags={tags} setTags={setTags} />
 			<ProteinsDisplay tags={tags} />
 			<Footer />
       </main>
