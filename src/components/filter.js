@@ -36,9 +36,9 @@ export default function FilterCtrl ({tags, setTags}){
 	}
 
 	return (
-		<Box my='5'>
-		<Heading size='md'>フィルター</Heading>
-		<Stack direction='row'>
+		<Box my='5' borderWidth='1px' borderRadius='lg'>
+		<Heading size='md' mt='2' ml='2'>フィルター</Heading>
+		<Stack direction='row' ml='2' mb='2'>
 			<Checkbox isChecked={checkedWhey} onChange={WheyCheckboxOnChange}>{ProteinTag.Whey}</Checkbox>
 			<Checkbox isChecked={checkedSoy} onChange={SoyCheckboxOnChange}>{ProteinTag.Soy}</Checkbox>
 		</Stack>
