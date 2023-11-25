@@ -1,3 +1,5 @@
+import Company from '../components/company';
+
 export default class Product {
 	constructor(name, company, imgUrl, tags, tastes){
 		this.name = name;

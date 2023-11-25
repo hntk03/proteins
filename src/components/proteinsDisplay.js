@@ -3,11 +3,15 @@ import Product from '../components/product';
 import ProteinTag from '../components/proteinTag';
 import Taste from '../components/taste';
 import Url from '../components/url';
+import Company from '../components/company';
 import { Text, SimpleGrid } from '@chakra-ui/react';
+
+const Ultra = new Company('ULTORA', 'https://ultora.co.jp/');
+const Belegend = new Company('ビーレジェンド', 'https://store.belegend.jp/');
 
 const p1 = new Product(
 	'ホエイダイエットプロテイン(1000g)',
-	'ULTORA',
+	Ultra,
 	'https://d2w53g1q050m78.cloudfront.net/ultoracojp/ec_assets/f528590ab77be8f8ff6a9d79399b144e0f9d5194-original.?1694423344',
 	[ ProteinTag.Whey ],
 	[
@@ -22,7 +26,7 @@ const p1 = new Product(
 
 const p2 = new Product(
 	'ソイダイエットプロテイン(500g)',
-	'ULTORA',
+	Ultra,
 	'https://d2w53g1q050m78.cloudfront.net/ultoracojp/ec_assets/be8b287d287d81d7717a469e36087ef148f8c78b-original.png?1696919045',
 	[ ProteinTag.Soy ],
 	[
@@ -40,7 +44,7 @@ const p2 = new Product(
 
 const p3 = new Product(
 	'WPCプロテイン',
-	'ビーレジェンド',
+	Belegend,
 	'https://store.belegend.jp/client_info/REALSTYLE/itemimage/BLPC07AP1/BLPC07AP_01.jpg',
 	[ ProteinTag.Whey ],
 	[

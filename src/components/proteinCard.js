@@ -1,7 +1,7 @@
 import { Heading, Image, Card, Stack,  CardHeader, CardBody, CardFooter } from '@chakra-ui/react';
 import { Button, Popover, PopoverTrigger, PopoverContent, PopoverArrow, PopoverCloseButton, PopoverBody } from '@chakra-ui/react';
 import { Tab, Tabs, TabList, TabPanels, TabPanel, Divider } from '@chakra-ui/react';
-import { Text } from '@chakra-ui/react';
+import { Text, Link } from '@chakra-ui/react';
 import Product from '../components/product';
 
 export default function ProteinCard({product}){
@@ -50,7 +50,7 @@ export default function ProteinCard({product}){
 	
 				<Stack mt='6' spacing='3'>
 					<Heading size='md'>{product.name}</Heading>
-					<Text as='u'>{product.company}</Text>
+					<Link href={product.company.url}>{product.company.name}</Link>
 					{popover(product)}
 				</Stack>
 	
