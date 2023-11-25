@@ -14,7 +14,7 @@ export default function Home() {
   return (
 		<ChakraProvider>
     <div>
-			<Container>
+			<Container minHeight='100vh'>
 
 			<MyHead />
 
