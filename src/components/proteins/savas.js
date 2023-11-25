@@ -45,6 +45,21 @@ const aquaWhey100 = new Product(
 	]
 );
 
+const soy100 = new Product(
+	'ソイプロテイン100',
+	Savas,
+	'https://www.meiji.co.jp/sports/savas/img/common/common_soy100-cocoa.jpg?20231122',
+	[ ProteinTag.Soy ],
+	[
+		new Taste(
+			'ココア味',
+			new Url('https://amzn.asia/d/a5PUjNK')),
+		new Taste(
+			'ミルクティー風味',
+			new Url('https://amzn.asia/d/1hPOOYU')),
+	]
+);
+
 export default function Savass(){
-	return [whey100, aquaWhey100];
+	return [whey100, aquaWhey100, soy100];
 }

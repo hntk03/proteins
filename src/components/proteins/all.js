@@ -1,6 +1,7 @@
 import Ultras from './ultra';
 import Belegends from './belegend';
 import Savass from './savas';
+import Xplosions from './xplosion';
 
 
 export default function Proteins(){
@@ -8,6 +9,7 @@ export default function Proteins(){
 	proteins.push(...Ultras());
 	proteins.push(...Belegends());
 	proteins.push(...Savass());
+	proteins.push(...Xplosions());
 
 	return proteins;
 }

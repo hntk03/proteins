@@ -4,43 +4,37 @@ import { useState } from 'react';
 import ProteinTag from '../components/proteinTag';
 
 export default function FilterCtrl ({tags, setTags}){
-	const [checkedWhey, setCheckedWhey] = useState(false);
-	const [checkedSoy, setCheckedSoy] = useState(false);
 
-	const WheyCheckboxOnChange = (e) => {
-		const isChecked = e.target.checked;
-		setCheckedWhey(isChecked);
-		
-		let newTag = tags.slice()
-		if(isChecked){
-			newTag.push(ProteinTag.Whey);
-		}else{
-			newTag = newTag.filter(tag => tag !== ProteinTag.Whey);
+	class FilterCheckBox{
+		constructor(tag){
+			this.tag = tag;
+			[this.isChecked, this.setCheckBox] = useState(false);
 		}
 
-		setTags(newTag);
-	}
+		OnChange = (e) => {
+			const isChecked = e.target.checked;
+			this.setCheckBox(isChecked);
+			
+			let newTag = tags.slice()
+			if(isChecked){
+				newTag.push(this.tag);
+			}else{
+				newTag = newTag.filter(tag => tag !== this.tag);
+			}
 
-	const SoyCheckboxOnChange = (e) => {
-		const isChecked = e.target.checked;
-		setCheckedSoy(isChecked);
-		
-		let newTag = tags.slice()
-		if(isChecked){
-			newTag.push(ProteinTag.Soy);
-		}else{
-			newTag = newTag.filter(tag => tag !== ProteinTag.Soy);
+			setTags(newTag);
 		}
-
-		setTags(newTag);
 	}
+
+	const wheyCheckBox = new FilterCheckBox(ProteinTag.Whey);
+	const soyCheckBox = new FilterCheckBox(ProteinTag.Soy);
 
 	return (
 		<Box my='5' borderWidth='1px' borderRadius='lg'>
 		<Heading size='md' mt='2' ml='2'>フィルター</Heading>
 		<Stack direction='row' ml='2' mb='2'>
-			<Checkbox isChecked={checkedWhey} onChange={WheyCheckboxOnChange}>{ProteinTag.Whey}</Checkbox>
-			<Checkbox isChecked={checkedSoy} onChange={SoyCheckboxOnChange}>{ProteinTag.Soy}</Checkbox>
+			<Checkbox isChecked={wheyCheckBox.isChecked} onChange={wheyCheckBox.OnChange}>{wheyCheckBox.tag}</Checkbox>
+			<Checkbox isChecked={soyCheckBox.isChecked} onChange={soyCheckBox.OnChange}>{soyCheckBox.tag}</Checkbox>
 		</Stack>
 		</Box>
 	);
