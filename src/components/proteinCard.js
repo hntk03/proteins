@@ -1,6 +1,6 @@
 import { Heading, Image, Card, Stack,  CardHeader, CardBody, CardFooter } from '@chakra-ui/react';
 import { Button, Popover, PopoverTrigger, PopoverHeader, PopoverContent, PopoverArrow, PopoverCloseButton, PopoverBody } from '@chakra-ui/react';
-import { Tab, Tabs, TabList, TabPanels, TabPanel, Divider } from '@chakra-ui/react';
+import { SimpleGrid } from '@chakra-ui/react';
 import { Text, Link } from '@chakra-ui/react';
 import Product from '../components/product';
 
@@ -9,7 +9,7 @@ export default function ProteinCard({product}){
 	const popover = (product) => {
 
 		return (
-			<Popover minW='max-content'>
+			<Popover>
 				<PopoverTrigger>
 					<Button size='md'>リンク</Button>
 				</PopoverTrigger>
@@ -17,7 +17,9 @@ export default function ProteinCard({product}){
 					<PopoverArrow />
 					<PopoverHeader>Amazon</PopoverHeader>
 					<PopoverBody>
-					{product.tastes.map(taste => <Button as='a' variant='outline' href={taste.url.amazon}>{taste.name}</Button>)}
+					<SimpleGrid columns={2} spacing={2}>
+					{product.tastes.map(taste => <Button as='a' variant='outline' href={taste.url.amazon} size='sm' whiteSpace='unset'><Text fontSize='xs' overflowWrap='break-word'>{taste.name}</Text></Button>)}
+					</SimpleGrid>
 					</PopoverBody>
 					</PopoverContent>
 			</Popover>
