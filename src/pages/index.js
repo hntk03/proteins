@@ -8,13 +8,13 @@ import Header from '../components/header';
 import Footer from '../components/footer';
 import ProteinsDisplay from '../components/proteinsDisplay';
 import FilterCtrl from '../components/filter';
+import { theme } from '../components/theme';
 
 export default function Home() {
 	const [tags, setTags] = useState([]);
   return (
-		<ChakraProvider>
-    <div>
-			<Container minHeight='100vh'>
+		<ChakraProvider theme={theme}>
+			<Container minHeight='100vh' maxW='4xl' >
 
 			<MyHead />
 
@@ -25,7 +25,6 @@ export default function Home() {
 			<Footer />
       </main>
 			</Container>
-		</div>
 		</ChakraProvider>
 	);
 }
