@@ -2,6 +2,7 @@ import Ultras from './ultra';
 import Belegends from './belegend';
 import Savass from './savas';
 import Xplosions from './xplosion';
+import Ambiques from './ambique';
 
 
 export default function Proteins(){
@@ -10,6 +11,7 @@ export default function Proteins(){
 	proteins.push(...Belegends());
 	proteins.push(...Savass());
 	proteins.push(...Xplosions());
+	proteins.push(...Ambiques());
 
 	return proteins;
 }
